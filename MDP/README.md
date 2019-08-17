@@ -16,8 +16,11 @@
 - 值函数 `v(s)` 估计一个状态其值有多好. 更正式的说,假设智能体处于状态`s`,他的值将就会是这状态未来的累积回报 `G_t` . `v(s) = Ex[G_t | S_t = s]`. 请注意，值函数的估计策略是来自`pi`。
 - 动作-值函数: q(s, a) 估计一个状态和动作对其值有多好. 与值函数类似，但他考虑了动作
 - 贝尔曼方程表达相邻状态 `v(s)`和 `v(s')`之间的关系. 他可以用"backup" diagram来表示. 贝尔曼方程在值函数和动作值函数之间都成立。
+![image](https://github.com/RonaldJEN/Reinforcement_Learning/blob/master/pic/贝尔曼方程.png)
 - 值函数定义了一个策略好坏的判断方式. 对于所有状态s,如果`v_p1(s) >= v_p2(s)` 则策略`p1` 好于策略 `p2` .对于MDPs, 存在一个或多个优于或等于其他策略的最优策略
 - 最优状态值函数 `v*(s)` 是最优策略的值函数. 对于最优状态动作函数 `q*(s, a)`也是如此. 贝尔曼最优性方程定义了最优的状态值如何与下一个最优的状态值相关。 他是“最大”而不是平均值。
+![image](https://github.com/RonaldJEN/Reinforcement_Learning/blob/master/pic/贝尔曼最优方程.png)
+
 ### 课件与视频
 
 **Required:**
