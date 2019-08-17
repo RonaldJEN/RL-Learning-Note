@@ -1,26 +1,23 @@
-## Model-Based RL: Policy and Value Iteration using Dynamic Programming
+## 动态规划: 基于模型的RL, 策略迭代 ＆ 值迭代
 
-### Learning Goals
+### 学习目标
 
-- Understand the difference between Policy Evaluation and Policy Improvement and how these processes interact
-- Understand the Policy Iteration Algorithm
-- Understand the Value Iteration Algorithm
-- Understand the Limitations of Dynamic Programming Approaches
+ - 了解策略评估和策略改进之间的区别以及这些流程如何相互作用
+ - 了解策略迭代算法
+ - 理解值迭代算法
+ - 理解动态规划方法的局限性
 
+### 摘要
 
-### Summary
-
-- Dynamic Programming (DP) methods assume that we have a perfect model of the environment's Markov Decision Process (MDP). That's usually not the case in practice, but it's important to study DP anyway.
-- Policy Evaluation: Calculates the state-value function `V(s)` for a given policy. In DP this is done using a "full backup". At each state, we look ahead one step at each possible action and next state. We can only do this because we have a perfect model of the environment.
-- Full backups are basically the Bellman equations turned into updates.
-- Policy Improvement: Given the correct state-value function for a policy we can act greedily with respect to it (i.e. pick the best action at each state). Then we are guaranteed to improve the policy or keep it fixed if it's already optimal.
-- Policy Iteration: Iteratively perform Policy Evaluation and Policy Improvement until we reach the optimal policy.
-- Value Iteration: Instead of doing multiple steps of Policy Evaluation to find the "correct" V(s) we only do a single step and improve the policy immediately. In practice, this converges faster.
-- Generalized Policy Iteration: The process of iteratively doing policy evaluation and improvement. We can pick different algorithms for each of these steps but the basic idea stays the same.
-- DP methods bootstrap: They update estimates based on other estimates (one step ahead).
-
-
-### Lectures & Readings
+- 动态规划(DP) ：假设我们有一个完美的环境马尔可夫决策过程模型（MDP）。在实践中通常情况并非如此，但无论如何研究DP都很重要。
+- 策略评估: 计算给定策略`pi`的状态值函数 `V(s)` . 在DP中, 他是使用"full backup"完成的. 在每一个状态, 我们展望每个可能的动作和下一步状态. 我们能这样做，是因为我们拥有完美的MDP模型。
+- "full backup(反向更新)：full backup过程和贝尔曼方程很像,只不过是把贝尔曼方程转化成了赋值规则。当backup计算不再变化时，说明这个时候的状态值已经收敛到可以满足贝尔曼方程了。
+- 策略改进: 基于一个确定策略的状态值函数,我们可以采用greedily法来选择动作(即在每个状态下采取最佳行动).然后当策略不再改进时,我们可以保证这个策略已经是最优的.
+- 策略迭代: 循环执行策略评估和策略改进，直到达到最优策略。
+- 值迭代: 我们只需要执行一个步骤并立即改进策略,而不是执行多个步骤的策略评估去找到正确的V(s)值. 在实践中,这種收敛更快。
+- 广义策略迭代: 循环进行策略评估和改进的过程。我们可以为每个步骤选择不同的算法，但基本思路保持不变。
+- 动态规划法bootstrap(自举法): 根据其他的估计值更新估计值 (one step ahead).
+### 课件与视频
 
 **Required:**
 
@@ -33,18 +30,18 @@
 
 ### Exercises
 
-- Implement Policy Evaluation in Python (Gridworld)
+- 实现策略评估 in Python (Gridworld)
   - [Exercise](Policy%20Evaluation.ipynb)
   - [Solution](Policy%20Evaluation%20Solution.ipynb)
 
-- Implement Policy Iteration in Python (Gridworld)
+- 实现策略迭代 in Python (Gridworld)
   - [Exercise](Policy%20Iteration.ipynb)
   - [Solution](Policy%20Iteration%20Solution.ipynb)
 
-- Implement Value Iteration in Python (Gridworld)
+- 实现值迭代   in Python (Gridworld)
   - [Exercise](Value%20Iteration.ipynb)
   - [Solution](Value%20Iteration%20Solution.ipynb)
 
-- Implement Gambler's Problem
+- 实现赌徒问题
   - [Exercise](Gamblers%20Problem.ipynb)
   - [Solution](Gamblers%20Problem%20Solution.ipynb)
