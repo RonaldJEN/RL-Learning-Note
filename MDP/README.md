@@ -7,23 +7,17 @@
 - 了解 值函数 ,动作-值函数,策略函数 
 - 了解 值函数 ,动作-值函数的贝尔曼方程 和 贝尔曼最优方程 
 
-### Summary
+### 摘要
 
 - 智能体 & 环境 交互: 在每一步 `t` 智能体会收到状态 `S_t`, 并做出动作 `A_t` and 获得奖励 `R_{t+1}`. 动作的选择是来自策略函数 `pi`.
-
 - 累積獎勵 `G_t` 是从t时刻起,所有奖励的加总 . 未来收益会以折现率`gamma^k`进行折现.
-- Markov property: The environment's response at time `t+1` depends only on the state and action representations at time `t`. The future is independent of the past given the present. Even if an environment doesn't fully satisfy the Markov property we still treat it as if it is and try to construct the state representation to be approximately Markov.
-
 - 马尔可夫性：环境在`t+1`时的状态仅受到时间`t`时刻的状态和动作影响。 未来与当前的过去无关。 即使一个环境不能完全满足马尔可夫性，我们仍然把它看作是它,并试图将状态表示的方式,改进成近似马尔可夫。
-
-- Markov Decision Process (MDP): Defined by a state set S, action set A and one-step dynamics `p(s',r | s,a)`. If we have complete knowledge of the environment we know the transition dynamic. In practice, we often don't know the full MDP (but we know that it's some MDP).
-- The Value Function `v(s)` estimates how "good" it is for an agent to be in a particular state. More formally, it's the expected return `G_t` given that the agent is in state `s`. `v(s) = Ex[G_t | S_t = s]`. Note that the value function is specific to a given policy `pi`.
-- Action Value function: q(s, a) estimates how "good" it is for an agent to be in states and take action a. Similar to the value function, but also considers the action.
-- The Bellman equation expresses the relationship between the value of a state and the values of its successor states. It can be expressed using a "backup" diagram. Bellman equations exist for both the value function and the action value function.
-- Value functions define an ordering over policies. A policy `p1` is better than `p2` if `v_p1(s) >= v_p2(s)` for all states s. For MDPs, there exist one or more optimal policies that are better than or equal to all other policies.
-- The optimal state value function `v*(s)` is the value function for the optimal policy. Same for `q*(s, a)`. The Bellman Optimality Equation defines how the optimal value of a state is related to the optimal value of successor states. It has a "max" instead of an average.
-
-
+- 马尔可夫决策过程 (MDP): 由状态集S，动作集A和单步dynamics `p(s',r | s,a)`定义. 如果我们完全了解环境，我们就知道转移概率. 在实践中，我们通常不知道完整的MDP（但我们知道它有的部分是MDP）。
+- 值函数 `v(s)` 估计一个状态其值有多好. 更正式的说,假设智能体处于状态`s`,他的值将就会是这状态未来的累积回报 `G_t` . `v(s) = Ex[G_t | S_t = s]`. 请注意，值函数的估计策略是来自`pi`。
+- 动作-值函数: q(s, a) 估计一个状态和动作对其值有多好. 与值函数类似，但他考虑了动作
+- 贝尔曼方程表达相邻状态 `v(s)`和 `v(s')`之间的关系. 他可以用"backup" diagram来表示. 贝尔曼方程在值函数和动作值函数之间都成立。
+- 值函数定义了一个策略好坏的判断方式. 对于所有状态s,如果`v_p1(s) >= v_p2(s)` 则策略`p1` 好于策略 `p2` .对于MDPs, 存在一个或多个优于或等于其他策略的最优策略
+- 最优状态值函数 `v*(s)` 是最优策略的值函数. 对于最优状态动作函数 `q*(s, a)`也是如此. 贝尔曼最优性方程定义了最优的状态值如何与下一个最优的状态值相关。 他是“最大”而不是平均值。
 ### 课件与视频
 
 **Required:**
